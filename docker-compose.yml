@@ -7,11 +7,13 @@ services:
         depends_on:
             - zookeeper
         volumes:
-            - "./kafka/server.properties:/opt/kafka_2.13-2.5.0/config/server.properties:ro"
+            - "./kafka/server.properties:/opt/kafka_2.13-2.6.0/config/server.properties:ro"
+        container_name: kafka
    zookeeper:
         build: ./zookeeper
         ports:
             - "2181:2181"
         volumes:
-            - "./zookeeper/zookeeper.properties:/opt/kafka_2.13-2.5.0/config/zookeeper.properties:ro"
+            - "./zookeeper/zookeeper.properties:/opt/kafka_2.13-2.6.0/config/zookeeper.properties:ro"
+        container_name: zookeeper
 
